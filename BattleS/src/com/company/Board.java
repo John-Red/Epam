@@ -58,6 +58,7 @@ public class Board {
                 System.out.println(ANSI_BLUE + "Ваши координаты: " + yourY + " " + yourX + ANSI_RESET);
                 System.out.println(ANSI_BLUE + "Выход в точке: " + exitY + " " + exitX + ANSI_RESET);
                 System.out.println(ANSI_BLUE + "Размер уровня:  " + up + " " + right + ANSI_RESET);
+                System.out.println(ANSI_BLUE + "HP :  " + Player.healthPoint + ANSI_RESET);
                 break;
             default:
                 System.out.println(ANSI_RED + "неверный ход" + ANSI_RESET);
@@ -71,14 +72,15 @@ public class Board {
         int number = rnd.nextInt(99);
         if (number <= luck) {
             newFight.start();
-//        } else {
-//            if (number >= (100 - luck)) {
-//                System.out.println(ANSI_YELLOW + "вы нашли шпинат -- HP восстановленны" + ANSI_RESET);
         } else {
-            System.out.println(ANSI_RED + "сектор чист" + ANSI_RESET);
+            if (number >= (100 - luck)) {
+                Player.healthPoint = 15;
+                System.out.println(ANSI_YELLOW + "вы нашли шпинат -- HP восстановленны" + ANSI_RESET);
+            } else {
+                System.out.println(ANSI_RED + "сектор чист" + ANSI_RESET);
+            }
         }
     }
-
 
     // check for exit LvL
 

@@ -11,7 +11,7 @@ public class Intro {
     }
 
     public void rules() {
-        System.out.println(ANSI_GREEN + "Вводи по О Д Н О М У символу за раз, дальше даже слушать не буду");
+        System.out.println(ANSI_GREEN + "Вводи по О Д Н О М У символу за раз");
         new Delay(300);
         //delay
         System.out.println("Чтобы двигаться есть W A S D");
@@ -25,7 +25,7 @@ public class Intro {
 
         System.out.println("Посмотреть КАРТУ M!");
         new Delay(300);
-        System.out.println("Сделав шаг рискуешь напороться на монстра. После битвы твои HP восстанавливаются. Удачи! И поспеши, говорят воздух может закончится" + ANSI_RESET);
+        System.out.println("Сделав шаг рискуешь напороться на монстра. Удачи! И поспеши, говорят воздух может закончится" + ANSI_RESET);
         new Delay(300);
     }
 }

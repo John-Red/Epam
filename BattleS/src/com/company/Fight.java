@@ -11,7 +11,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Fight {
-    private Player player;
+    Player player;
 
     Fight(){
         this.player= new Player();

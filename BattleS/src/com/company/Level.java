@@ -9,7 +9,7 @@ public class Level {
     public void start() {
 
         for(int i = 1; i<3; i++) {
-            // Build map and player inside
+            // Build map
             Board newBoard = new Board();
             System.out.println("УРОВЕНЬ " + i);
             Timer newTimer = new Timer();
