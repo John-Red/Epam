@@ -4,52 +4,21 @@ import com.company.Delay;
 
 import static com.company.TextColor.*;
 
-public class SmallShip extends Ship {
+public class Catto extends Enemy {
 
-    @Override
-    public void SetPlace() {
+
+   public Catto() {
         alive = true;
         healthPoint = 1;
-        name="ПИРАТ-ДЕТСАД : ";
+        name="Кошка-ПИРАТ : ";
+        dmg=1;
         System.out.println("ПОЯВИЛСЯ ПРОТИВНИК"); new Delay(900);
-       Say("hello");
-       Print();
+       say("hello");
+       print();
     }
 
-    @Override
-    public void Damage(char damage) {
-        switch (damage) {
-            case ('w'):
-            case ('W'):
-                healthPoint=healthPoint-3;
-                Say("hurts");
-                System.out.println("HP противника : "+healthPoint);
-                break;
-            case ('d'):
-            case ('D'):
-                Say("again");
-                break;
-            case ('s'):
-            case ('S'):
-                Say("again");
-                break;
-            case ('a'):
-            case ('A'):
-                healthPoint=healthPoint-100;
-                Say("hurts");
-                System.out.println("HP противника : "+healthPoint);
-                break;
-            case ('m'):
-            case ('M'):
-                Say("MOM");
-                System.exit(0);
-            default:
-                System.out.println(ANSI_RED +"неверный ход"+ ANSI_RESET);
-                break;
-           }
-    }
-
-    protected void Say(String say){
+       @Override
+    protected void say(String say){
         switch (say){
             case "again" :
                 System.out.println(name+"Ты проиграешь! Тебе ни за что не победить меня" );
@@ -70,7 +39,8 @@ public class SmallShip extends Ship {
         }
 
     }
-    void Print(){
+    @Override
+    void print(){
         int mil = 200;
         System.out.println(ANSI_PURPLE+"／ﾌﾌ 　　　　　 　　 　ム｀ヽ");
         System.out.println("/ ノ)　　 ∧　　∧　　　　）　ヽ");

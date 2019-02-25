@@ -5,12 +5,12 @@ import static com.company.TextColor.ANSI_GREEN;
 import static com.company.TextColor.ANSI_RESET;
 
 public class Intro {
-    public void Start() {
+    public void start() {
         System.out.println(ANSI_GREEN + "Друг мой ты попал в передрягу...и тут есть несколько правил" + ANSI_RESET);
         new Delay(300);
     }
 
-    public void Rules() {
+    public void rules() {
         System.out.println(ANSI_GREEN + "Вводи по О Д Н О М У символу за раз, дальше даже слушать не буду");
         new Delay(300);
         //delay

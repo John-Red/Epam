@@ -5,19 +5,19 @@ import static com.company.TextColor.ANSI_RESET;
 import static com.company.TextColor.ANSI_YELLOW;
 
 public class Game {
-    public void Start() {
+    public void start() {
 
         // intro
         Intro newIntro = new Intro();
-        newIntro.Start();
-        newIntro.Rules();
+        newIntro.start();
+        newIntro.rules();
         Level newLevel = new Level();
-        newLevel.New();
+        newLevel.start();
 
-        Victory();
+        thisVictory();
     }
 
-    private void Victory() {
+    private void thisVictory() {
         System.out.println(ANSI_YELLOW + "Поздравляю ты выбрался из подземелья!!" + ANSI_RESET);
         System.exit(0);
     }

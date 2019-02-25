@@ -6,20 +6,19 @@ import com.company.Delay;
 import static com.company.TextColor.ANSI_PURPLE;
 import static com.company.TextColor.ANSI_RESET;
 
-public class MidShip extends SmallShip {
+public class Doggo extends Enemy {
 
-    @Override
-    public void SetPlace() {
+    public Doggo() {
         alive = true;
         healthPoint = 5;
-        name="ШКОЛЬНИК-ПИРАТ : ";
+        name="Собака-ПИРАТ : ";
+        dmg=2;
         System.out.println("ПОЯВИЛСЯ ПРОТИВНИК"); new Delay(900);
-        Say("hello");
-                Print();
+        say("hello");
     }
 
 @Override
-protected void Say(String say){
+protected void say(String say){
     switch (say){
         case "again" :
             System.out.println(name+"Ты проиграешь! Как и твоя мамка!" );
@@ -32,6 +31,7 @@ protected void Say(String say){
             System.out.println("Стоит пойти и извиниться");
             break;
         case "hello":
+            print();
             System.out.println(name+"PvP или зассал!?");
             break;
         default:
@@ -41,7 +41,7 @@ protected void Say(String say){
 
 }
 @Override
-void Print(){
+void print(){
     int mil = 200;
     System.out.println(ANSI_PURPLE+"░░░░░░░█▐▓▓░████▄▄▄█▀▄▓▓▓▌█ ");
     System.out.println("░░░░░▄█▌▀▄▓▓▄▄▄▄▀▀▀▄▓▓▓▓▓▌█ ");
@@ -56,8 +56,4 @@ void Print(){
     System.out.println("█▐▓▓▓▓▓▓▄▄▄▓▓▓▓▓▓█▓█▓█▓█▓▓▓▐█");
     System.out.println("█▐▓▓▓▓▓▓▄▄▄▓▓▓▓▓▓█▓█▓█▓█▓▓▓▐█"+ ANSI_RESET);new Delay(mil);
 }
-public int Attac(){
-    return 1;
-}
-
 }

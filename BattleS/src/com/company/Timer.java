@@ -2,7 +2,7 @@ package com.company;
 
 
 public class Timer {
-    public void Set() {
+    public void set() {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {

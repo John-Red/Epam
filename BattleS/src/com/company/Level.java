@@ -6,23 +6,21 @@ import static com.company.TextColor.ANSI_RED;
 import static com.company.TextColor.ANSI_RESET;
 
 public class Level {
-    public void New() {
-        int countLvls = 1;
-        while (countLvls < 3) {
+    public void start() {
+
+        for(int i = 1; i<3; i++) {
             // Build map and player inside
             Board newBoard = new Board();
-            System.out.println("УРОВЕНЬ " + countLvls);
+            System.out.println("УРОВЕНЬ " + i);
             Timer newTimer = new Timer();
-            newTimer.Set();
+            newTimer.set();
             // Move
-            while (newBoard.ScanExit()) {
+            while (!newBoard.scanExit()) {
                 System.out.println(ANSI_RED + newBoard.yourY + " " + newBoard.yourX + " Ходить на w a s d ;)" + ANSI_RESET);
                 Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
                 char ch = sc.next().charAt(0);
-                newBoard.Move(ch);
-                newBoard.ScanExit();
+                newBoard.move(ch);
             }
-            countLvls++;
             System.out.println("УРОВЕНЬ ПРОЙДЕН!!!");
         }
     }

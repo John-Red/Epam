@@ -9,20 +9,20 @@ import static com.company.TextColor.ANSI_PURPLE;
 import static com.company.TextColor.ANSI_RESET;
 
 
-public class BigChungus extends MidShip {
+public class BigChungus extends Enemy {
 
-    @Override
-    public void SetPlace() {
+    public BigChungus() {
         alive = true;
         healthPoint = 100;
         name = "Big Good Chungus";
+        dmg = 10;
         System.out.println("ПОЯВИЛСЯ ПРОТИВНИК");  new Delay(900);
-        Print();
-        Say("hello");
+        print();
+        say("hello");
     }
 
     @Override
-    protected void Say(String say) {
+    protected void say(String say) {
         switch (say) {
             case "again":
                 System.out.println(name + "CHUNGA...CHUNGA...CHUNGA...CHUNGA!");
@@ -44,7 +44,7 @@ public class BigChungus extends MidShip {
 
     }
     @Override
-    void Print(){
+    void print(){
         int mil=200;
         System.out.println(ANSI_PURPLE+"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ "); new Delay(mil);
         System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣧⠀⠀⠀⢰⡿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ");
@@ -74,9 +74,9 @@ public class BigChungus extends MidShip {
 
     }
     @Override
-    public int Attac(){
+    public int attac(){
         Random rnd = new Random(System.currentTimeMillis());
-        int random =rnd.nextInt(9);
+        int random =rnd.nextInt(dmg);
         return random;
     }
 }
