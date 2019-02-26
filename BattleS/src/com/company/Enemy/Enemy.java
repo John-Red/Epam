@@ -4,12 +4,12 @@ import static com.company.TextColor.ANSI_RED;
 import static com.company.TextColor.ANSI_RESET;
 
 public abstract class Enemy {
-    static boolean alive;
-    static int healthPoint;
-    static String name;
-    static int dmg;
+   boolean alive=true;
+    int healthPoint;
+    String name;
+    int dmg;
 
-        public void damage (char damage) {
+        public void takeDamage (char damage) {
             switch (damage) {
                 case ('w'):
                 case ('W'):
@@ -40,7 +40,7 @@ public abstract class Enemy {
                     break;
             }
         }
-    public boolean stayingAlive(){
+    public boolean isAlive(){
         if (healthPoint<1)
             alive=false;
         return alive;

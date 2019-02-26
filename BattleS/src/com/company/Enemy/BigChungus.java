@@ -12,7 +12,6 @@ import static com.company.TextColor.ANSI_RESET;
 public class BigChungus extends Enemy {
 
     public BigChungus() {
-        alive = true;
         healthPoint = 100;
         name = "Big Good Chungus";
         dmg = 10;
@@ -25,17 +24,17 @@ public class BigChungus extends Enemy {
     protected void say(String say) {
         switch (say) {
             case "again":
-                System.out.println(name + "CHUNGA...CHUNGA...CHUNGA...CHUNGA!");
+                System.out.println(this.name + "CHUNGA...CHUNGA...CHUNGA...CHUNGA!");
                 break;
             case "hurts":
-                System.out.println(name + "(╯︵╰,)");
+                System.out.println(this.name + "(╯︵╰,)");
                 break;
             case "MOM":
                 System.out.println("Вы попали в свою маму");
                 System.out.println("Стоит пойти и извиниться");
                 break;
             case "hello":
-                System.out.println(name + "CHUNGA...CHUNGA...CHUNGA...CHUNGA");
+                System.out.println(this.name + "CHUNGA...CHUNGA...CHUNGA...CHUNGA");
                 break;
             default:
                 System.out.println("╮(￣～￣)╭");
@@ -76,7 +75,7 @@ public class BigChungus extends Enemy {
     @Override
     public int attac(){
         Random rnd = new Random(System.currentTimeMillis());
-        int random =rnd.nextInt(dmg);
+        int random =rnd.nextInt(this.dmg);
         return random;
     }
 }

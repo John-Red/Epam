@@ -8,7 +8,6 @@ public class Catto extends Enemy {
 
 
    public Catto() {
-        alive = true;
         healthPoint = 1;
         name="Кошка-ПИРАТ : ";
         dmg=1;
@@ -21,17 +20,17 @@ public class Catto extends Enemy {
     protected void say(String say){
         switch (say){
             case "again" :
-                System.out.println(name+"Ты проиграешь! Тебе ни за что не победить меня" );
+                System.out.println(this.name+"Ты проиграешь! Тебе ни за что не победить меня" );
                 break;
             case "hurts" :
-                System.out.println(name+".･ﾟﾟ･(／ω＼)･ﾟﾟ･");
+                System.out.println(this.name+".･ﾟﾟ･(／ω＼)･ﾟﾟ･");
                 break;
             case "MOM" :
                 System.out.println("Вы попали в свою маму");
                 System.out.println("Стоит пойти и извиниться");
                 break;
             case "hello":
-                System.out.println(name+"Тобi Пiзда");
+                System.out.println(this.name+"Тобi Пiзда");
                 break;
                 default:
                     System.out.println("╮(￣～￣)╭");

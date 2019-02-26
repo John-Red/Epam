@@ -9,7 +9,6 @@ import static com.company.TextColor.ANSI_RESET;
 public class Doggo extends Enemy {
 
     public Doggo() {
-        alive = true;
         healthPoint = 5;
         name="Собака-ПИРАТ : ";
         dmg=2;
@@ -21,10 +20,10 @@ public class Doggo extends Enemy {
 protected void say(String say){
     switch (say){
         case "again" :
-            System.out.println(name+"Ты проиграешь! Как и твоя мамка!" );
+            System.out.println(this.name+"Ты проиграешь! Как и твоя мамка!" );
             break;
         case "hurts" :
-            System.out.println(name+"(╯︵╰,)");
+            System.out.println(this.name+"(╯︵╰,)");
             break;
         case "MOM" :
             System.out.println("Вы попали в свою маму");
@@ -32,7 +31,7 @@ protected void say(String say){
             break;
         case "hello":
             print();
-            System.out.println(name+"PvP или зассал!?");
+            System.out.println(this.name+"PvP или зассал!?");
             break;
         default:
             System.out.println("╮(￣～￣)╭");

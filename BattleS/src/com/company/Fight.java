@@ -10,6 +10,9 @@ import java.util.Random;
 
 import java.util.Scanner;
 
+import static com.company.TextColor.ANSI_RESET;
+import static com.company.TextColor.ANSI_YELLOW;
+
 class Fight {
     Player player;
 
@@ -42,12 +45,12 @@ class Fight {
         do {
             Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
             char ch = sc.next().charAt(0);
-            enemy0.damage(ch);
-
+            enemy0.takeDamage(ch);
+            player.healthPoint = player.healthPoint - enemy0.attac();
             if ((player.healthPoint < 1)) {
                 new GameOver();
             }
-        } while (enemy0.stayingAlive());
+        } while (enemy0.isAlive());
     }
     private void playerVsDoggo (){
         Doggo enemy1 = new Doggo();
@@ -55,14 +58,14 @@ class Fight {
         do {
             Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
             char ch = sc.next().charAt(0);
-            enemy1.damage(ch);
-            Player.healthPoint = player.healthPoint - enemy1.attac();
+            enemy1.takeDamage(ch);
+            player.healthPoint = player.healthPoint - enemy1.attac();
             System.out.println("твои HP " + player.healthPoint);
 
             if (player.healthPoint < 1) {
                 new GameOver();
             }
-        } while (enemy1.stayingAlive());
+        } while (enemy1.isAlive());
     }
     private void playerVsSpoungebop (){
         Spoungebop enemy2 = new Spoungebop();
@@ -70,27 +73,32 @@ class Fight {
         do {
             Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
             char ch = sc.next().charAt(0);
-            enemy2.damage(ch);
+            enemy2.takeDamage(ch);
             player.healthPoint = player.healthPoint - enemy2.attac();
             System.out.println("твои HP " + player.healthPoint);
 
             if (player.healthPoint < 1) {
                 new GameOver();
             }
-        } while (enemy2.stayingAlive());
+        } while (enemy2.isAlive());
     }
     private void playerVsChunga (){
         BigChungus boss = new BigChungus();
         do {
             Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
             char ch = sc.next().charAt(0);
-            boss.damage(ch);
+            boss.takeDamage(ch);
             player.healthPoint = player.healthPoint - boss.attac();
             System.out.println("твои HP " + player.healthPoint);
 
             if (player.healthPoint < 1) {
                 new GameOver();
             }
-        } while (boss.stayingAlive());
+        } while (boss.isAlive());
     }
+    void healPlayer (int plus){
+        this.player.healthPoint=this.player.healthPoint+plus;
+        System.out.println(ANSI_YELLOW + "вы нашли шпинат -- HP +10" + ANSI_RESET);
+    }
+    int  getHp(){ return this.player.healthPoint;}
 }

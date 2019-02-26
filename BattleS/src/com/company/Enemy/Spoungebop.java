@@ -10,8 +10,6 @@ import static com.company.TextColor.ANSI_RESET;
 public class Spoungebop extends Enemy {
 
     public Spoungebop() {
-
-        alive = true;
         healthPoint = 10;
         name = "Губка Боб-ПИРАТ : ";
         dmg = 4;
@@ -50,7 +48,7 @@ public class Spoungebop extends Enemy {
     @Override
     public int attac() {
         Random rnd = new Random(System.currentTimeMillis());
-        int random = rnd.nextInt(dmg);
+        int random = rnd.nextInt(this.dmg);
         return random;
     }
 
@@ -58,10 +56,10 @@ public class Spoungebop extends Enemy {
     protected void say(String say) {
         switch (say) {
             case "again":
-                System.out.println(name + "Раздавлю твой крабсбургер");
+                System.out.println(this.name + "Раздавлю твой крабсбургер");
                 break;
             case "hurts":
-                System.out.println(name + "(╯︵╰,)");
+                System.out.println(this.name + "(╯︵╰,)");
                 break;
             case "MOM":
                 System.out.println("Вы попали в свою маму");
@@ -69,7 +67,7 @@ public class Spoungebop extends Enemy {
                 break;
             case "hello":
                 print();
-                System.out.println(name + "Я из тебя фарш для бургеров сделаю");
+                System.out.println(this.name + "Я из тебя фарш для бургеров сделаю");
                 break;
             default:
                 System.out.println("╮(￣～￣)╭");

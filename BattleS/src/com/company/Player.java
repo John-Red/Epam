@@ -2,7 +2,7 @@ package com.company;
 
 
 public class Player {
-    static int healthPoint;
+    int healthPoint;
 
     Player() {
         this.healthPoint = 15;
