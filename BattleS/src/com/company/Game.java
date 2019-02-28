@@ -11,13 +11,14 @@ public class Game {
         Intro newIntro = new Intro();
         newIntro.start();
         newIntro.rules();
-        Level newLevel = new Level();
-        newLevel.start();
+        Player player = new Player();
+        Level level = new Level(player);
+        level.start();
 
-        thisVictory();
+        showVictory();
     }
 
-    private void thisVictory() {
+    private void showVictory() {
         System.out.println(ANSI_YELLOW + "Поздравляю ты выбрался из подземелья!!" + ANSI_RESET);
         System.exit(0);
     }
