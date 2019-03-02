@@ -2,14 +2,19 @@ package com.company;
 
 
 public class Player {
-    private int healthPoint = 15;
+
+    private int healthPoint =15;
 
     public int getHealthPoint() {
-        return this.healtPoint;
+        return healthPoint;
     }
-   
+
     public void hurtHealth(int killValue) {
-        this.healtPoint -= killValue;
+        healthPoint -= killValue;
+    }
+
+    public void healHealth(int healValue) {
+        healthPoint += healValue;
     }
 
 }

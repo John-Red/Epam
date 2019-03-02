@@ -7,7 +7,7 @@ public abstract class Enemy {
    boolean alive=true;
     int healthPoint;
     String name;
-    int dmg;
+    int dmg=0;
 
         public void takeDamage (char damage) {
             switch (damage) {
@@ -48,7 +48,7 @@ public abstract class Enemy {
     protected abstract void say(String say);
     abstract void print();
     public int attac(){
-        return dmg;
+        return this.dmg;
     }
 
 }

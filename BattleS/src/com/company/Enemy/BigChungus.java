@@ -75,7 +75,7 @@ public class BigChungus extends Enemy {
     @Override
     public int attac(){
         Random rnd = new Random(System.currentTimeMillis());
-        int random =rnd.nextInt(this.dmg);
-        return random;
+        int randomDmg =rnd.nextInt(this.dmg);
+        return randomDmg;
     }
 }
