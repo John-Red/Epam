@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47912c9a-195d-4eb5-bf5a-337477b2850e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/BattleS/com/company/GetChar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
-    <list id="4eede27e-5f14-41bc-9dfb-a86defb68ddf" name="Revert &quot;Чтение действия игрока вынесенно в отдельный класс&quot;" comment="Revert &quot;Чтение действия игрока вынесенно в отдельный класс&quot;&#10;&#10;This reverts commit 6ac18739">
-      <change beforePath="$PROJECT_DIR$/src/com/company/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Fight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/GetChar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Intro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Intro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Level.java" afterDir="false" />
-    </list>
+    <list default="true" id="47912c9a-195d-4eb5-bf5a-337477b2850e" name="Default" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;BattleS/.idea/workspace.xml&#10;#&#9;BattleS/out/production/BattleS/com/company/Fight.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Intro.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Level.class" />
+    <list id="4eede27e-5f14-41bc-9dfb-a86defb68ddf" name="Revert &quot;Чтение действия игрока вынесенно в отдельный класс&quot;" comment="Revert &quot;Чтение действия игрока вынесенно в отдельный класс&quot;&#10;&#10;This reverts commit 6ac18739" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Fight.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="152">
+              <caret line="55" column="13" lean-forward="true" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -47,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="255">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,7 +97,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
+    <option name="x" value="-2" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -115,7 +107,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,7 +130,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -284,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551961471395</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;BattleS/.idea/workspace.xml&#10;#&#9;BattleS/out/production/BattleS/com/company/Fight.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Intro.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Level.class">
+      <created>1551962492645</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551962492645</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -299,7 +298,7 @@
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1382" height="744" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -309,14 +308,14 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49707174" weight="0.20785597" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49621785" weight="0.43698853" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5205047" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50226927" side_tool="true" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4977307" weight="0.68576103" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4977307" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" sideWeight="0.5030257" side_tool="true" visible="true" weight="0.3666121" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4969743" visible="true" weight="0.3666121" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4969743" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.23974763" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -415,7 +414,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Revert &quot;comment&quot;&#10;&#10;This reverts commit 5b18df74" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;comment&quot;&#10;&#10;This reverts commit 5b18df74" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;BattleS/.idea/workspace.xml&#10;#&#9;BattleS/out/production/BattleS/com/company/Fight.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Intro.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Level.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;BattleS/.idea/workspace.xml&#10;#&#9;BattleS/out/production/BattleS/com/company/Fight.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Intro.class&#10;#&#9;BattleS/out/production/BattleS/com/company/Level.class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -562,23 +562,16 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Fight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="255">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -588,8 +581,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GetChar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Fight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="55" column="13" lean-forward="true" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
         </state>
       </provider>
     </entry>
