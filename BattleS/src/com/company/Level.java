@@ -24,8 +24,7 @@ class Level {
 
         while (!newBoard.getScanExit()) {
             System.out.println(ANSI_RED + newBoard.getYourY() + " " + newBoard.getYourX() + " Ходить на w a s d ;)" + ANSI_RESET);
-            Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
-            char ch = sc.next().charAt(0);
+            char ch=GetChar.Char();
             newBoard.move(ch);
         }
         System.out.println("УРОВЕНЬ ПРОЙДЕН!!!");

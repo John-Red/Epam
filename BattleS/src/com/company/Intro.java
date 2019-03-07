@@ -4,13 +4,14 @@ package com.company;
 import static com.company.TextColor.ANSI_GREEN;
 import static com.company.TextColor.ANSI_RESET;
 
-public class Intro {
-    public void start() {
+class Intro {
+
+    void start() {
         System.out.println(ANSI_GREEN + "Друг мой ты попал в передрягу...и тут есть несколько правил" + ANSI_RESET);
         new Delay(300);
     }
 
-    public void rules() {
+    void rules() {
         System.out.println(ANSI_GREEN + "Вводи по О Д Н О М У символу за раз");
         new Delay(300);
         //delay

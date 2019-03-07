@@ -46,8 +46,7 @@ class Fight {
     private void battle(Enemy enemy) {
 
         do {
-            Scanner sc = new Scanner(System.in).useDelimiter("\\s*");
-            char ch = sc.next().charAt(0);
+            char ch = GetChar.Char();
             enemy.takeDamage(ch);
             player.hurtHealth(enemy.attac());
             System.out.println("твои HP " + player.getHealthPoint());
