@@ -1,10 +1,9 @@
 package com.company;
 
 
-public class GameOver {
+class GameOver {
     GameOver() {
         System.out.println("GAME OVER");
         System.exit(0);
-      // длфтащшфутцашщтцатщцш
     }
 }
