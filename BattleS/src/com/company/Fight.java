@@ -56,5 +56,5 @@ class Fight {
             }
         } while (enemy.isAlive());
     }
-//new
+
 }
