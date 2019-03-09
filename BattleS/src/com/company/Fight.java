@@ -7,11 +7,7 @@ import java.util.Scanner;
 class Fight {
     private Player player;
     private int level;
-    private Catto catto;
-    private Doggo doggo;
-    private Spoungebop spoungebop;
-    private BigChungus bigChungus;
-    private Enemy enemy;
+     private Enemy enemy;
 
     Fight(Player player, int level) {
         this.player = player;
@@ -22,24 +18,7 @@ class Fight {
         int number;
         Random rnd = new Random(System.currentTimeMillis());
         number = rnd.nextInt(4);
-        switch (number) {
-            case 0:
-                this.catto=new Catto();
-                this.enemy=this.catto;
-                break;
-            case 1:
-                this.doggo=new Doggo();
-                this.enemy=this.doggo;
-                break;
-            case 2:
-                this.spoungebop=new Spoungebop();
-                this.enemy=this.spoungebop;
-                break;
-            default:
-                this.bigChungus=new BigChungus();
-                this.enemy=this.bigChungus;
-                break;
-        }
+        this.enemy= FactoryMethod.getEnemy(number);
         battle(this.enemy);
     }
 
