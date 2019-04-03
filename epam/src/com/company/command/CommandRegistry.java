@@ -11,6 +11,7 @@ public enum CommandRegistry {
         commands = new HashMap<>();
         commands.put("author", new CommandAuthor("author"));
         commands.put("version", new CommandVersion("version"));
+        commands.put("name", new CommandName("name"));
     }
 
     public ACommand getCommand (String name){
