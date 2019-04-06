@@ -10,9 +10,9 @@ public class Application {
     static public final String VERSION = "0.0.0";
 
     public static void main(String[] args) {
-        String currentName = "name";
+        CommandRegistry.INSTANCE.showCommands();
+        String currentName = "version";
         ACommand command = CommandRegistry.INSTANCE.getCommand(currentName);
         command.execute();
-
     }
 }
