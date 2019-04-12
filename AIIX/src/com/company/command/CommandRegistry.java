@@ -20,6 +20,7 @@ public enum CommandRegistry {
         commands.put("author", new CommandAuthor("author"));
         commands.put("version", new CommandVersion("version"));
         commands.put("name", new CommandName("name"));
+        commands.put("weather", new CommandWeather("weather"));
     }
 
     /**
