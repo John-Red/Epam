@@ -1,5 +1,6 @@
-package main.java.company.command;
-import static main.java.company.Application.APP_NAME;
+package company.command;
+import static company.Application.APP_NAME;
+
 
 
 public class CommandName extends ACommand {

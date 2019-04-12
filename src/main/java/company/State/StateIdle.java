@@ -1,5 +1,5 @@
-package main.java.company.State;
-import main.java.company.Application;
+package company.State;
+import company.Application;
 
 public  class StateIdle extends  ApplicationState {
 

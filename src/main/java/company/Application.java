@@ -1,7 +1,8 @@
-package main.java.company;
+package company;
 
-import main.java.company.State.ApplicationState;
-import main.java.company.command.*;
+import company.command.ACommand;
+import company.command.CommandRegistry;
+import company.State.ApplicationState;
 
 public class Application {
 

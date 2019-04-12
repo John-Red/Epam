@@ -1,5 +1,6 @@
-package main.java.company.command;
-import static main.java.company.Application.VERSION;
+package company.command;
+import static company.Application.VERSION;
+
 
 
 public class CommandVersion extends ACommand {

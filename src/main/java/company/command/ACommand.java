@@ -1,4 +1,4 @@
-package main.java.company.command;
+package company.command;
 
 public abstract class ACommand {
     private String name;

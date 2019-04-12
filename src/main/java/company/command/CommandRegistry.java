@@ -1,5 +1,4 @@
-package main.java.company.command;
-
+package company.command;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +16,7 @@ public enum CommandRegistry {
       static   Map<String, ACommand> commands;
 
     static {
-        commands = new HashMap<>();
+        commands = new HashMap();
         commands.put("author", new CommandAuthor("author"));
         commands.put("version", new CommandVersion("version"));
         commands.put("name", new CommandName("name"));

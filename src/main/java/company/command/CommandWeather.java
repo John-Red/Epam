@@ -1,4 +1,4 @@
-package main.java.company.command;
+package company.command;
 
 import com.weatherlibrary.datamodel.WeatherModel;
 import com.weatherlibraryjava.Repository;
