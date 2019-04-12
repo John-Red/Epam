@@ -1,4 +1,4 @@
-package com.company.State;
+package main.java.company.State;
 
 public abstract class ApplicationState {
 

@@ -1,7 +1,8 @@
-package com.company.command;
-import static com.company.Application.VERSION;
+package main.java.company.command;
+import static main.java.company.Application.VERSION;
 
-public class CommandVersion extends ACommand{
+
+public class CommandVersion extends ACommand {
     CommandVersion (String name){
         super(name);
     }

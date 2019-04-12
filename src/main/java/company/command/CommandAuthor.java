@@ -1,5 +1,6 @@
-package com.company.command;
-import static com.company.Application.AUTHOR;
+package main.java.company.command;
+import static main.java.company.Application.AUTHOR;
+
 
 
 public class CommandAuthor extends ACommand {

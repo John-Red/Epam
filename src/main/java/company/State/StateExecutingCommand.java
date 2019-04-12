@@ -1,7 +1,8 @@
-package com.company.State;
+package main.java.company.State;
 
-import com.company.Application;
-import com.company.State.*;
+
+import main.java.company.Application;
+
 
 public class StateExecutingCommand extends ApplicationState {
 

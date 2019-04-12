@@ -1,9 +1,7 @@
-package com.company;
+package main.java.company;
 
-import com.company.State.ApplicationState;
-import com.company.State.StateIdle;
-import com.company.command.ACommand;
-import com.company.command.CommandRegistry;
+import main.java.company.State.ApplicationState;
+import main.java.company.command.*;
 
 public class Application {
 
@@ -31,7 +29,7 @@ public class Application {
 //            currentState.onCommand(commandName + i);
 //        }
 
-        ACommand command= CommandRegistry.INSTANCE.getCommand("weather");
+        ACommand command= CommandRegistry.INSTANCE.getCommand("version");
         command.execute();
     }
 }
