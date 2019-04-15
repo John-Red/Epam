@@ -2,7 +2,10 @@ package company;
 
 import company.command.ACommand;
 import company.command.CommandRegistry;
-import company.State.ApplicationState;
+import company.common.ConsoleCanvas;
+import company.profile.ProfileController;
+import company.state.ApplicationState;
+import company.state.StateIdle;
 
 public class Application {
 
@@ -22,6 +25,17 @@ public class Application {
     }
 
     public static void main(String[] args) {
+
+        ConsoleCanvas consoleCanvas=new ConsoleCanvas();
+        consoleCanvas.init(10,10,'.');
+        consoleCanvas.drawArray();
+
+//        ProfileController controller=new ProfileController();
+//        controller.showProfile(2);
+//
+//
+//
+//
 //        changeState(new StateIdle(), "Idle");
 //        //reading input
 //       String commandName = "test command";
@@ -30,7 +44,8 @@ public class Application {
 //            currentState.onCommand(commandName + i);
 //        }
 
-        ACommand command= CommandRegistry.INSTANCE.getCommand("version");
-        command.execute();
+        ACommand command= CommandRegistry.INSTANCE.getCommand("weather");
+            command.execute();
+
     }
 }

@@ -1,4 +1,4 @@
-package company.State;
+package company.state;
 
 public abstract class ApplicationState {
 

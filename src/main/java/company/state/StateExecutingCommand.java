@@ -1,4 +1,4 @@
-package company.State;
+package company.state;
 import company.Application;
 
 
@@ -7,7 +7,7 @@ public class StateExecutingCommand extends ApplicationState {
 
     @Override
     public void enter(String commandName) {
-        System.out.println("Entering State Executing Command" + commandName);
+        System.out.println("Entering state Executing Command" + commandName);
         //get command by name;
         //command execute
         executeCommand(commandName);
@@ -25,6 +25,6 @@ public class StateExecutingCommand extends ApplicationState {
 
     @Override
     public void exit() {
-        System.out.println("Leaving State Executing Command");
+        System.out.println("Leaving state Executing Command");
     }
 }

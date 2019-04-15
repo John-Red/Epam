@@ -1,4 +1,4 @@
-package company.State;
+package company.state;
 import company.Application;
 
 public  class StateIdle extends  ApplicationState {
