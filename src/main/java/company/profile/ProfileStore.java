@@ -3,21 +3,28 @@ package company.profile;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Stores criminal profiles via model instances.
+ */
 public enum ProfileStore {
     INSTANCE;
 
-      Map<Integer,ProfileModel> profiles;
+    Map<Integer, ProfileModel> profiles;
+
+    // Logical block. Executes before any constructor.
     {
-        profiles=new HashMap<Integer,ProfileModel>();
+        profiles = new HashMap<Integer, ProfileModel>();
     }
-    public  void loadData(){
-        for (int i=0;i<50;i++){
-            ProfileModel model=ProfileModel.randomId();
-            profiles.put(model.getId(),model);
+
+    // Actually there will be less then numberOfProfiles.
+    public void loadRandomGeneratedProfiles(int numberOfProfiles) {
+        for (int i = 0; i < numberOfProfiles; i++) {
+            ProfileModel model = ProfileModel.randomModel();
+            profiles.put(model.getId(), model);
         }
     }
 
-    public  ProfileModel getProfile (int id){
-        return  profiles.get(id);
-    }
+    public void loadProfile(ProfileModel model) { profiles.put(model.getId(), model); }
+
+    public ProfileModel getProfile(int id) { return profiles.get(id); }
 }

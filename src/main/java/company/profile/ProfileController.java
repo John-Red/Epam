@@ -1,46 +1,48 @@
 package company.profile;
 
+import company.common.Canvas;
 import company.common.ConsoleCanvas;
 
 public class ProfileController {
-    private ProfileModel model/*profileModel*/;
-    private ProfileView view;
-    private ProfileStore store;
-    private ConsoleCanvas canvas;
 
+    //private ProfileModel model;
+    private ProfileView view;
+    private Canvas canvas;
+
+    // Static block will be executed before any logical blocks or constructors.
+    static {
+        ProfileStore.INSTANCE.loadRandomGeneratedProfiles(100);
+    }
 
     {
-        ProfileStore.INSTANCE.loadData();
+        // ConsoleCanvas by default.
+        //canvas = new ConsoleCanvas();
         view = new ProfileView();
-        canvas = new ConsoleCanvas();
-
-    }
-
-    public ProfileModel getModel() {
-        return model;
-
-    }
-
-    public void setModel(ProfileModel model) {
-        this.model = model;
-    }
-
-    public ProfileView getView() {
-        return view;
-    }
-
-    public void setView(ProfileView view) {
-        this.view = view;
     }
 
     public void showProfile(int id) {
-        ProfileModel model = ProfileStore.INSTANCE.getProfile(id);
-        if (model == null) {
-            System.out.println("No record with id " + id);
+        ProfileModel profileModel = ProfileStore.INSTANCE.getProfile(id);
+        if (profileModel == null) {
+            System.out.println("No record with ID " + id);
         } else {
-            view.setModel(model);
+            view.setModel(profileModel);
             view.draw(canvas);
-
         }
     }
+
+//        public ProfileModel getModel() {
+//        return model;
+//    }
+
+//    public void setModel(ProfileModel model) {
+//        this.model = model;
+//    }
+
+//    public ProfileView getView() {
+//        return view;
+//    }
+
+//    public void setView(ProfileView view) {
+//        this.view = view;
+//    }
 }

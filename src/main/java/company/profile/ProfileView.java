@@ -4,20 +4,16 @@ package company.profile;
 import company.common.BaseView;
 import company.common.Canvas;
 
+/**
+ * Prints or draws criminal profile from model.
+ */
 public class ProfileView extends BaseView {
+
     @Override
-    public void draw() {
-        System.out.println("Criminal profile view ");
-        System.out.println("ID: " +((ProfileModel)model).getId());
-        System.out.println("Name: " + ((ProfileModel)model).getName());
-        System.out.println("Active: " + ((ProfileModel)model).isActive());
-    }
-    @Override
-    public void draw (Canvas canvas){
-        canvas.drawText("Criminal profile view ");
-        canvas.drawText("ID: " +((ProfileModel)model).getId());
+    public void draw(Canvas canvas) {
+        canvas.drawText("Criminal profile: ");
+        canvas.drawText("ID: " + ((ProfileModel)model).getId());
         canvas.drawText("Name: " + ((ProfileModel)model).getName());
         canvas.drawText("Active: " + ((ProfileModel)model).isActive());
-        //canvas.drawText("");
     }
 }

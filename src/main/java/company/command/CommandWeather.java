@@ -1,32 +1,33 @@
 package company.command;
 
-import com.google.gson.Gson;
-import com.weatherlibrary.datamodel.Forecast;
 import com.weatherlibrary.datamodel.WeatherModel;
 import com.weatherlibraryjava.IRepository;
-import com.weatherlibraryjava.Repository;
-import com.weatherlibraryjava.RequestBlocks;
+import static company.Application.WEATHER_KEY;
 
 
 public class CommandWeather extends ACommand {
-   private IRepository repository;
-     private static final String KEY = "91ead9711dd84912af085935191204";
-     private WeatherModel weatherModel;
 
-    CommandWeather(String name) {
+    private WeatherModel weatherModel;
+
+    CommandWeather(String name,WeatherModel weathermodel) {
         super(name);
-        repository=new Repository();
 
+        this.weatherModel=weathermodel;
     }
 
     @Override
     public void execute() {
-        try {
-            weatherModel=repository.GetWeatherDataByAutoIP(KEY);
-            System.out.println("Your location "+weatherModel.location.name);
-            System.out.println("Temperature "+weatherModel.current.temp_c);
-        } catch (Exception e) {
-            e.printStackTrace();
+        System.out.println("Your location " + weatherModel.location.name);
+        System.out.println("Temperature " + weatherModel.current.temp_c);
+        System.out.println("Baby it's " + opinion() + " outside");
+    }
+
+    private String opinion() {
+        if (weatherModel.current.temp_c < 5) {
+            return "cold";
         }
+        if (weatherModel.current.temp_c > 23) {
+            return "hot";
+        } else return "warm";
     }
 }
