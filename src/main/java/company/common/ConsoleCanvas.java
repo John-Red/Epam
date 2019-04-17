@@ -1,19 +1,43 @@
 package company.common;
 
 public class ConsoleCanvas extends Canvas {
-    char[][] array;
-    int x;
-    int y;
 
-    public void init(int x, int y, char ch) {
-        this.x = x;
-        this.y = y;
-        array = new char[x][y];
-        for (int i = 0; i < y; i++)
-            for (int j = 0; j < x; j++) {
-                array[i][j] = ch;
+    private char[][] pixels;
+    private int width;
+    private int height;
+
+    public ConsoleCanvas(int width, int height) {
+        this.height = height;
+        this.width = width;
+        init();
+    }
+
+    public void init() {
+        pixels = new char[height][width];
+        reset();
+    }
+
+    private void reset() {
+        for (int i = 0; i <  height; i++) {
+            for (int j = 0; j < width; j++) {
+                pixels[i][j] = '.';
             }
 
+        }
+    }
+
+    public void draw() {
+        for (int i = 0; i < height; i++) {
+            System.out.println();
+            for (int j = 0; j < width; j++) {
+                System.out.print(pixels[i][j]);
+            }
+        }
+    }
+
+    // Set symbol at coordinates at screen.
+    public void setSymbolAt(int x, int y, char symbol) {
+        pixels[x][y] = symbol;
     }
 
     @Override
@@ -21,14 +45,44 @@ public class ConsoleCanvas extends Canvas {
         System.out.println(text);
     }
 
-    @Override
-    public void drawArray() {
+    public void drawSquareAt(int x, int y, int size) {
+        for (int i = 0; i < size; i++) {
+            if (i == 0 || i == size - 1){
+                for (int j = 0; j < size; j++) {
+                    setSymbolAt(x, y, '#');
+                    y++;
+                }
 
-        for (int i = 0; i < y; i++) {
-            for (int j = 0; j < x; j++) {
-                System.out.print(" " + array[i][j] + " ");
+            } else {
+                setSymbolAt(x, y, '#');
+                y++;
+                for (int j = 0; j < size - 2; j++) {
+                    y++;
+                }
+                setSymbolAt(x, y, '#');
+                y++;
             }
-            System.out.println();
+            x++;
+            y -= size;
+
         }
+
+        draw();
+    }
+
+    // TODO: Make library with these methods:
+
+    @Override
+    public void drawSquare(int size) {
+
+    }
+
+    public void drawCircleAt(int x, int y, int radius) {
+
+    }
+
+    // TODO: Text must move between the lines.
+    public void drawTextAt(int x, int y, String text) {
+
     }
 }
