@@ -1,15 +1,20 @@
 package company;
 
+import com.weatherlibraryjava.Repository;
+import com.weatherlibraryjava.RequestBlocks;
 import company.command.ACommand;
 import company.command.CommandRegistry;
 import company.common.ConsoleCanvas;
+import company.database.DataBase;
 import company.database.Record;
 import company.database.Table;
 import company.profile.ProfileController;
 import company.state.ApplicationState;
 import company.state.StateIdle;
+import javafx.scene.control.Tab;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Application {
@@ -30,27 +35,64 @@ public class Application {
     }
 
     public static void main(String[] args) {
+        List<String[]> records = DataBase.readDataFile("C:\\Git/test.csv");
 
-        List<String> columns = new ArrayList<String>();
-        columns.add("id");
-        columns.add("firstName");
-        columns.add("lastName");
-        Table criminalTable = new Table("Criminals", columns);
-        List<String> values = new ArrayList<String>();
-        List<String> values2 = new ArrayList<String>();
-        values.add("1");
-        values.add("Vladimir");
-        values.add("Trampo");
-        values2.add("2");
-        values2.add("Donald");
-        values2.add("Timosh");
-        criminalTable.insert(new Record(values));
-        criminalTable.insert(new Record(values2));
 
-        List<String> result = criminalTable.selectField("firstName");
-        for (String s: result) {
-            System.out.println(s);
-        }
+
+//        Table table = new Table("Criminals", Arrays.asList(new String[]{"id", "name", "deceased"}));
+//        Record record = new Record(table);
+//        record.setValues(new String[]{"100", "Anthony Soprano", "false"});
+//        try {
+//            System.out.println(record.getInt("id"));
+//            System.out.println(record.getBoolean("deceased"));
+//        } catch (Record.FieldNotFoundExeption ex) {
+//            ex.printStackTrace();
+//        } catch (NumberFormatException nfe) {
+//            nfe.printStackTrace();
+//        }
+        System.out.println("All is ok, all exceptions have been caught!");
+
+//       final DataBase db = new DataBase();
+//         Thread thread = new Thread() {
+//             @Override
+//             public void run() {
+//                 try {
+//                     Thread.sleep(500);
+//                     db.select();
+//
+//                 } catch (InterruptedException e) {
+//                 }
+//             }
+//         };
+//        Runnable runnable=new Runnable() {
+//            public void run() {
+//                db.update();
+//            }
+//        };
+//        thread.start();
+//        (new Thread(runnable)).start();
+
+
+//        List<String> columns = new ArrayList<String>();
+//        columns.add("id");
+//        columns.add("firstName");
+//        columns.add("lastName");
+//        Table criminalTable = new Table("Criminals", columns);
+//        List<String> values = new ArrayList<String>();
+//        List<String> values2 = new ArrayList<String>();
+//        values.add("1");
+//        values.add("Vladimir");
+//        values.add("Trampo");
+//        values2.add("2");
+//        values2.add("Donald");
+//        values2.add("Timosh");
+//        criminalTable.insert(new Record(values));
+//        criminalTable.insert(new Record(values2));
+//
+//        List<String> result = criminalTable.selectField("firstName");
+//        for (String s: result) {
+//            System.out.println(s);
+//        }
 
 
         // Two options for creating threads.
@@ -102,10 +144,8 @@ public class Application {
 
 //        ProfileController controller=new ProfileController();
 //        controller.showProfile(2);
-//
-//
-//
-//
+
+
 //        changeState(new StateIdle(), "Idle");
 //        //reading input
 //       String commandName = "test command";
@@ -114,8 +154,8 @@ public class Application {
 //            currentState.onCommand(commandName + i);
 //        }
 
-        ACommand command= CommandRegistry.INSTANCE.getCommand("time");
-            command.execute();
+//        ACommand command= CommandRegistry.INSTANCE.getCommand("time");
+//            command.execute();
 
     }
 }

@@ -2,6 +2,8 @@ package company.profile;
 
 import company.common.BaseModel;
 
+import java.util.Date;
+
 /**
  * Contains data about one criminal profile.
  */
@@ -10,13 +12,15 @@ public class ProfileModel extends BaseModel {
     private int id;
     private String firstName;
     private String lastName;
-    private boolean active;
+    private String nickName;
+    private int numberOfCrimes;
+    private Date dateOfBirth;
 
     public ProfileModel(int id, String firstName, String lastName, boolean active) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.active = active;
+
     }
 
     /**
@@ -53,14 +57,6 @@ public class ProfileModel extends BaseModel {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
     }
 
     public String getName() {

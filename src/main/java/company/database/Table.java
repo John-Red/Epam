@@ -1,7 +1,5 @@
 package company.database;
 
-
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -45,11 +43,17 @@ public class Table {
 
     // DS.query(SELECT ID, NAME EMAIL FROM CRIMINAL WHERE ID = ?)
 
+    public List<String> getColumns () {
+
+        return columns;
+
+    }
+
 
     public List<String> selectField(String fieldName) {
         int index = columns.indexOf(fieldName);
         Iterator it = records.iterator();
-        List<String> result = new ArrayList();
+        List<String> result = new ArrayList<String>();
         while(it.hasNext()) {
             Record r = (Record)it.next();
             result.add(r.values.get(index));

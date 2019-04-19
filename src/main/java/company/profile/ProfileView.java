@@ -14,6 +14,6 @@ public class ProfileView extends BaseView {
         canvas.drawText("Criminal profile: ");
         canvas.drawText("ID: " + ((ProfileModel)model).getId());
         canvas.drawText("Name: " + ((ProfileModel)model).getName());
-        canvas.drawText("Active: " + ((ProfileModel)model).isActive());
+
     }
 }
