@@ -38,16 +38,16 @@ public class DataBase {
         }
     }
 
-    public static List<String[]> readDataFile(String fieldName) {
+    public static List<String> readDataFile(String fieldName) {
         FileInputStream fis = null;
-        List<String[]> result = new ArrayList<String[]>();
+        List<String> result = new ArrayList<String>();
         BufferedReader br;
         try {
             fis = new FileInputStream(fieldName);
             br = new BufferedReader(new InputStreamReader(fis));
            String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+                result.add(line);
             }
         } catch (FileNotFoundException fnfe) {
 
@@ -60,7 +60,7 @@ public class DataBase {
                 e.printStackTrace();
             }
         }
-        return null;
+        return result;
     }
 
     public void delete() {

@@ -4,17 +4,21 @@ import com.weatherlibraryjava.Repository;
 import com.weatherlibraryjava.RequestBlocks;
 import company.command.ACommand;
 import company.command.CommandRegistry;
+import company.common.BaseView;
+import company.common.Canvas;
 import company.common.ConsoleCanvas;
 import company.database.DataBase;
 import company.database.Record;
 import company.database.Table;
 import company.profile.ProfileController;
+import company.profile.ProfileView;
 import company.state.ApplicationState;
 import company.state.StateIdle;
 import javafx.scene.control.Tab;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Application {
@@ -35,8 +39,11 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        List<String[]> records = DataBase.readDataFile("C:\\Git/test.csv");
-
+        List<String> records = DataBase.readDataFile("C:\\Git/Criminals.tbl");
+        ConsoleCanvas canvas=new ConsoleCanvas(80,30);
+        ProfileView  view = new ProfileView();
+        view.setRecords(records);
+        view.draw(canvas);
 
 
 //        Table table = new Table("Criminals", Arrays.asList(new String[]{"id", "name", "deceased"}));
@@ -50,27 +57,7 @@ public class Application {
 //        } catch (NumberFormatException nfe) {
 //            nfe.printStackTrace();
 //        }
-        System.out.println("All is ok, all exceptions have been caught!");
-
-//       final DataBase db = new DataBase();
-//         Thread thread = new Thread() {
-//             @Override
-//             public void run() {
-//                 try {
-//                     Thread.sleep(500);
-//                     db.select();
-//
-//                 } catch (InterruptedException e) {
-//                 }
-//             }
-//         };
-//        Runnable runnable=new Runnable() {
-//            public void run() {
-//                db.update();
-//            }
-//        };
-//        thread.start();
-//        (new Thread(runnable)).start();
+//        System.out.println("All is ok, all exceptions have been caught!");
 
 
 //        List<String> columns = new ArrayList<String>();
@@ -93,48 +80,6 @@ public class Application {
 //        for (String s: result) {
 //            System.out.println(s);
 //        }
-
-
-        // Two options for creating threads.
-
-        // Runnable is an interface.
-//        Runnable runnable1 = new Runnable() {
-////            @Override
-////            public void run() {
-////                for (int i = 0; i < 100; i++) {
-////                    System.out.printf("-");
-////                    try {
-////                        Thread.sleep(100);
-////                    } catch (InterruptedException e) {
-////
-////                    }
-////                }
-////            }
-////        };
-
-//        Thread thread = new Thread() {
-//            @Override
-//            public void run() {
-//                for (int i = 0; i < 100; i++) {
-//                    System.out.print(".");
-//                    try {
-//                        Thread.sleep(500);
-//                    } catch (InterruptedException e) {
-//
-//                    }
-//                }
-//                System.out.println("done!");
-//            }
-//        };
-
-//        // Running two threads at the same time.
-//        System.out.printf(thread.getState() + ""); // Prints thread state.
-//        (new Thread(runnable1)).start();
-//        thread.start();
-//        System.out.printf(thread.getState() + "");
-
-//        System.out.print("\nLoading");
-//        thread.start();
 
 //        ConsoleCanvas consoleCanvas = new ConsoleCanvas(100,100);
 //        consoleCanvas.setSymbolAt(0,2,'A');
