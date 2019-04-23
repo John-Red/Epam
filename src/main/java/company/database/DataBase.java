@@ -11,6 +11,8 @@ public class DataBase {
 
     Map<String, Table> tables;
 
+
+
     public  List<Record> select() {
 
         synchronized (tableLook) {

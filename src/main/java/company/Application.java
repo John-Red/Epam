@@ -1,5 +1,6 @@
 package company;
 
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import com.weatherlibraryjava.Repository;
 import com.weatherlibraryjava.RequestBlocks;
 import company.command.ACommand;
@@ -20,15 +21,27 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Application {
 
     static public final String APP_NAME = "AIIX";
     static public final String AUTHOR = "Evgeniy Redin";
-    static public final String VERSION = "0.0.0";
+    static public final String VERSION = "0.0.4";
     static public final String WEATHER_KEY = "91ead9711dd84912af085935191204";
 
-    static ApplicationState currentState; //currentState
+    static ApplicationState currentState; //currentState#
+
+    public static final String ALLOWED_DOMAIN_NAMES = "^([a-zA-Z0-9]+\\.)+(com|org|de|gov)$";
+
+    public static final String OP_GROUP= "^(SELECT|DELETE)";
+    public static final String FLD_GROUP= "([*a-zA-z, ]+)";
+    public static final String SPACE= "([\\s]+)";
+    public static final String FROM_GROUP="(FROM)";
+    public static final String TBL_GROUP="([a-zA-Z]+)$";
+
+
 
     public static void changeState(ApplicationState newState, String commandName) {
         if (currentState != null) {
@@ -37,13 +50,27 @@ public class Application {
         currentState = newState;
         newState.enter(commandName);
     }
+// строки в профили профили в модели
+
 
     public static void main(String[] args) {
-        List<String> records = DataBase.readDataFile("C:\\Git/Criminals.tbl");
-        ConsoleCanvas canvas=new ConsoleCanvas(80,30);
-        ProfileView  view = new ProfileView();
-        view.setRecords(records);
-        view.draw(canvas);
+
+        String query = "SELECT *, id, firstName, numberOfCrimes lastName FROM Criminals";
+          Pattern p = Pattern.compile(OP_GROUP+SPACE+FLD_GROUP+SPACE+FROM_GROUP+SPACE+TBL_GROUP);
+        Matcher matcher= p.matcher(query);
+        if (matcher.find()){
+            System.out.println("Number of groups "+ matcher.groupCount());
+            for (int i=0, len=matcher.groupCount(); i<=len; i++){
+                System.out.println("Group "+i+": "+matcher.group(i));
+            }
+        }
+
+
+//        List<String> records = DataBase.readDataFile("C:\\Git/Criminals.tbl");
+//        ConsoleCanvas canvas=new ConsoleCanvas(80,30);
+//        ProfileView  view = new ProfileView();
+//        view.setRecords(records);
+//        view.draw(canvas);
 
 
 //        Table table = new Table("Criminals", Arrays.asList(new String[]{"id", "name", "deceased"}));
