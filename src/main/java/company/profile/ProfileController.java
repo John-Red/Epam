@@ -1,12 +1,15 @@
 package company.profile;
 
 import company.common.Canvas;
-import company.common.ConsoleCanvas;
+
 
 public class ProfileController {
 
     //private ProfileModel model;
+
     private ProfileView view;
+    private ProfileModel model;
+    private ProfileStore store;
     private Canvas canvas;
 
     // Static block will be executed before any logical blocks or constructors.
@@ -15,8 +18,8 @@ public class ProfileController {
     }
 
     {
-        // ConsoleCanvas by default.
-        //canvas = new ConsoleCanvas();
+//        ConsoleCanvas by default.
+//        canvas = new ConsoleCanvas();
         view = new ProfileView();
     }
 

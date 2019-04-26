@@ -7,7 +7,7 @@ import com.weatherlibraryjava.Repository;
 import java.util.HashMap;
 import java.util.Map;
 
-import static company.Application.WEATHER_KEY;
+import static company.ApplicationConst.WEATHER_KEY;
 
 
 /**
@@ -19,37 +19,38 @@ public enum CommandRegistry {
     /**
      * Makes HashMap to save all available commands.
      */
-    static   Map<String, ACommand> commands;
+    static Map<String, ACommand> commands;
     static IRepository repository;
     static WeatherModel weatherModel;
+
     static {
-        repository=new Repository();
+        repository = new Repository();
         try {
-            weatherModel=repository.GetWeatherDataByAutoIP(WEATHER_KEY);
+            weatherModel = repository.GetWeatherDataByAutoIP(WEATHER_KEY);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        commands = new HashMap<String, ACommand>();
+        commands = new HashMap<>();
         commands.put("author", new CommandAuthor("author"));
         commands.put("version", new CommandVersion("version"));
         commands.put("name", new CommandName("name"));
-        commands.put("weather", new CommandWeather("weather",weatherModel));
+        commands.put("weather", new CommandWeather("weather", weatherModel));
         commands.put("time", new CommandTime("time", weatherModel));
     }
 
     /**
-     * @return Object type ACommand
      * @param name require a name of a command to return.
+     * @return Object type ACommand
      */
-    public ACommand getCommand (String name){
+    public ACommand getCommand(String name) {
         return commands.get(name);
     }
 
     /**
      * Method to write in console available commands.
      */
-    public void showCommands (){
-        for (Map.Entry<String, ACommand> entry : commands.entrySet()){
+    public void showCommands() {
+        for (Map.Entry<String, ACommand> entry : commands.entrySet()) {
             System.out.println(entry.getKey());
         }
     }

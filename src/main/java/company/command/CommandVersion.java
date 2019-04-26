@@ -1,5 +1,5 @@
 package company.command;
-import static company.Application.VERSION;
+import static company.ApplicationConst.VERSION;
 
 
 

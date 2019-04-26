@@ -13,8 +13,12 @@ public class ProfileModel extends BaseModel {
     private String firstName;
     private String lastName;
     private String nickName;
-    private int numberOfCrimes;
+    private int crimeFamilyId;
     private Date dateOfBirth;
+    private boolean deceased;
+    private Date dateOfDeath;
+    private int numberOfCrimes;
+
 
     public ProfileModel(int id, String firstName, String lastName, boolean active) {
         this.id = id;
@@ -25,6 +29,7 @@ public class ProfileModel extends BaseModel {
 
     /**
      * Creates random profile for testing.
+     *
      * @return Random model. Can be active or not active.
      */
     public static ProfileModel randomModel() {

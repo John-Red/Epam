@@ -29,7 +29,7 @@ public class ConsoleCanvas extends Canvas {
         for (int i = 0; i < height; i++) {
             System.out.println();
             for (int j = 0; j < width; j++) {
-                System.out.print(pixels[i][j]+" ");
+                System.out.print(pixels[i][j] + " ");
             }
         }
     }

@@ -24,7 +24,11 @@ public enum ProfileStore {
         }
     }
 
-    public void loadProfile(ProfileModel model) { profiles.put(model.getId(), model); }
+    public void loadProfile(ProfileModel model) {
+        profiles.put(model.getId(), model);
+    }
 
-    public ProfileModel getProfile(int id) { return profiles.get(id); }
+    public ProfileModel getProfile(int id) {
+        return profiles.get(id);
+    }
 }

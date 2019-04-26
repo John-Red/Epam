@@ -1,6 +1,6 @@
 package company.command;
-import static company.Application.APP_NAME;
 
+import static company.ApplicationConst.APP_NAME;
 
 
 public class CommandName extends ACommand {
@@ -10,6 +10,6 @@ public class CommandName extends ACommand {
 
     @Override
     public void execute() {
-        System.out.println("My name is "+APP_NAME);
+        System.out.println("My name is " + APP_NAME);
     }
 }

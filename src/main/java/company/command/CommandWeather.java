@@ -1,8 +1,6 @@
 package company.command;
 
 import com.weatherlibrary.datamodel.WeatherModel;
-import com.weatherlibraryjava.IRepository;
-import static company.Application.WEATHER_KEY;
 
 
 public class CommandWeather extends ACommand {
