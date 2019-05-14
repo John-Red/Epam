@@ -1,15 +1,16 @@
-package company.db.dbstate;
+package com.epam.javacore2019.steve2.dbservice.dbstate;
 
-
-import company.db.DBApplication;
-import company.db.data.Table;
-import company.db.data.TableMetaData;
-import company.db.misc.DBConstants;
-import company.db.misc.DataHandler;
-import company.db.misc.Utils;
-import company.server.DBServer;
+import com.epam.javacore2019.steve2.dbservice.DBApplication;
+import com.epam.javacore2019.steve2.dbservice.misc.DBConstants;
+import com.epam.javacore2019.steve2.dbservice.misc.Utils;
+import com.epam.javacore2019.steve2.dbservice.misc.DataHandler;
+import com.epam.javacore2019.steve2.dbservice.data.Table;
+import com.epam.javacore2019.steve2.dbservice.data.TableMetaData;
+import com.epam.javacore2019.steve2.dbservice.server.DBServer;
 
 public class DBStateInit extends DBState {
+
+
     public DBStateInit(String name) {
         super(name);
     }
@@ -20,8 +21,8 @@ public class DBStateInit extends DBState {
         initTables();
         try {
             DBServer.INSTANCE.start();
-        DBApplication.INSTANCE.changeState(DBApplication.INSTANCE.stateRun);}
-        catch (Exception e){
+            DBApplication.INSTANCE.changeState(DBApplication.INSTANCE.stateRun);
+        } catch (Exception e) {
             e.printStackTrace();
             DBApplication.INSTANCE.changeState(DBApplication.INSTANCE.stateStop);
         }

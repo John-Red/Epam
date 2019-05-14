@@ -14,6 +14,9 @@ public interface ApplicationConst {
     String FROM_GROUP = "(FROM)";
     String TBL_GROUP = "([a-zA-Z]+)$";
 
+
+    int PORT =6701;
+
     String DATA_DIR = "/data";
 
 }

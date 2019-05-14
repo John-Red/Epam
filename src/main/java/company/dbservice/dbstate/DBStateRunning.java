@@ -1,11 +1,13 @@
-package company.db.dbstate;
+package com.epam.javacore2019.steve2.dbservice.dbstate;
 
-
-import company.db.DBApplication;
+import com.epam.javacore2019.steve2.dbservice.DBApplication;
 
 public class DBStateRunning extends DBState {
 
-    public DBStateRunning(String name) {super(name);}
+    public DBStateRunning(String name) {
+        super(name);
+    }
+
     @Override
     public void enter() {
         System.out.println("Entering DBRunning state");

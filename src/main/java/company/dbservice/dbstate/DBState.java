@@ -1,10 +1,10 @@
-package company.db.dbstate;
+package com.epam.javacore2019.steve2.dbservice.dbstate;
 
 public abstract class DBState {
 
     protected String name;
 
-    public void setName(String name) {
+    public DBState(String name) {
         this.name = name;
     }
 
@@ -12,7 +12,7 @@ public abstract class DBState {
         return name;
     }
 
-    public DBState(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 

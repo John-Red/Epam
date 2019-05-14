@@ -1,8 +1,7 @@
-package company.db.dbstate;
+package com.epam.javacore2019.steve2.dbservice.dbstate;
 
-
-import company.ApplicationConst;
-import company.db.misc.Utils;
+import com.epam.javacore2019.steve2.dbservice.misc.DBConstants;
+import com.epam.javacore2019.steve2.dbservice.misc.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ public class DBStateStop extends DBState {
         List<String> list = new ArrayList<>();
         list.add("test string one");
         list.add("test string two");
-        Utils.writeListToFile(list, ApplicationConst.DATA_DIR + "/test.dat");
+        Utils.writeListToFile(list, DBConstants.DATA_DIR + "/test.dat");
     }
 
     @Override

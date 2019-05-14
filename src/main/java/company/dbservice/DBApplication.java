@@ -1,11 +1,10 @@
-package company.db;
+package com.epam.javacore2019.steve2.dbservice;
 
-
-import company.db.data.QueryResult;
-import company.db.dbstate.DBState;
-import company.db.dbstate.DBStateInit;
-import company.db.dbstate.DBStateRunning;
-import company.db.dbstate.DBStateStop;
+import com.epam.javacore2019.steve2.dbservice.data.QueryResult;
+import com.epam.javacore2019.steve2.dbservice.dbstate.DBState;
+import com.epam.javacore2019.steve2.dbservice.dbstate.DBStateInit;
+import com.epam.javacore2019.steve2.dbservice.dbstate.DBStateRunning;
+import com.epam.javacore2019.steve2.dbservice.dbstate.DBStateStop;
 
 public enum DBApplication {
     INSTANCE;
@@ -14,7 +13,7 @@ public enum DBApplication {
     private DBState currentState;
     public DBState stateInit = new DBStateInit("Initializing");
     public DBState stateRun = new DBStateRunning("Running");
-    public DBState stateStop = new DBStateStop("Shutting down");
+    public DBState stateStop = new DBStateStop("Shutting Down");
 
     public void start() {
         changeState(stateInit);
@@ -28,7 +27,7 @@ public enum DBApplication {
         return null;
     }
 
-    public String getStateName(){
+    public String getStateName() {
         return currentState.getName();
     }
 
