@@ -7,9 +7,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
-import java.util.Date;
 
-public class CssHandler implements HttpHandler {
+public class JsHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
         String path = httpExchange.getRequestURI().getPath();
@@ -19,7 +18,7 @@ public class CssHandler implements HttpHandler {
             fileBytes = Utils.readBytes("webclient/static" + path);
         }
         //application/javascript
-        httpExchange.getResponseHeaders().put("Content-Type", Arrays.asList(new String[]{"text/css"}));
+        httpExchange.getResponseHeaders().put("Content-Type", Arrays.asList(new String[]{"application/javascript"}));
         httpExchange.sendResponseHeaders(200, 0);
         OutputStream os = httpExchange.getResponseBody();
         if (fileBytes != null) {
@@ -27,4 +26,5 @@ public class CssHandler implements HttpHandler {
         }
         os.close();
     }
+
 }

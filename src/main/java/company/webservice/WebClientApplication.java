@@ -14,8 +14,26 @@ public enum WebClientApplication {
         HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 10 );
         server.createContext("/pages/", new HtmlHandler());
         server.createContext("/css/", new CssHandler());
+        server.createContext("/js/", new JsHandler());
+        server.createContext("/api/testget", new ApiGetTestHandler());
+        server.createContext("/api/testpost", new ApiPostTestHandler());
+        server.createContext("/api/criminals", new ApiPostTestHandler());
         server.start();
         String message = String.format("%s is running on port: %d", APP_NAME, server.getAddress().getPort());
         System.out.println(message);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+//server.createContext("/js/", new JsHandler());
+//server.createContext("/api/test/get", new ApiGetHandler());
+//server.createContext("/api/test/post", new ApiPostHandler());
