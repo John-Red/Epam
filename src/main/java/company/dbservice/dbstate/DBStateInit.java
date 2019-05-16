@@ -1,12 +1,12 @@
-package com.epam.javacore2019.steve2.dbservice.dbstate;
+package company.dbservice.dbstate;
 
-import com.epam.javacore2019.steve2.dbservice.DBApplication;
-import com.epam.javacore2019.steve2.dbservice.misc.DBConstants;
-import com.epam.javacore2019.steve2.dbservice.misc.Utils;
-import com.epam.javacore2019.steve2.dbservice.misc.DataHandler;
-import com.epam.javacore2019.steve2.dbservice.data.Table;
-import com.epam.javacore2019.steve2.dbservice.data.TableMetaData;
-import com.epam.javacore2019.steve2.dbservice.server.DBServer;
+import company.dbservice.DBApplication;
+import company.dbservice.misc.DBConstants;
+import company.dbservice.misc.Utils;
+import company.dbservice.misc.DataHandler;
+import company.dbservice.data.Table;
+import company.dbservice.data.TableMetaData;
+import company.dbservice.server.DBServer;
 
 public class DBStateInit extends DBState {
 

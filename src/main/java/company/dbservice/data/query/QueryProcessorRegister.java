@@ -1,4 +1,4 @@
-package com.epam.javacore2019.steve2.dbservice.data.query;
+package company.dbservice.data.query;
 
 import java.util.HashMap;
 import java.util.Map;

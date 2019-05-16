@@ -1,5 +1,4 @@
-package com.epam.javacore2019.steve2.webservice;
-
+package company.webservice;
 import java.io.FileInputStream;
 
 public class Utils {

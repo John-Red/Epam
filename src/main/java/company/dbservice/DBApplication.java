@@ -1,11 +1,11 @@
-package com.epam.javacore2019.steve2.dbservice;
+package company.dbservice;
 
-import com.epam.javacore2019.steve2.dbservice.data.Table;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryResult;
-import com.epam.javacore2019.steve2.dbservice.dbstate.DBState;
-import com.epam.javacore2019.steve2.dbservice.dbstate.DBStateInit;
-import com.epam.javacore2019.steve2.dbservice.dbstate.DBStateRunning;
-import com.epam.javacore2019.steve2.dbservice.dbstate.DBStateStop;
+import company.dbservice.data.Table;
+import company.dbservice.data.query.QueryResult;
+import company.dbservice.dbstate.DBState;
+import company.dbservice.dbstate.DBStateInit;
+import company.dbservice.dbstate.DBStateRunning;
+import company.dbservice.dbstate.DBStateStop;
 
 import java.util.HashMap;
 import java.util.Map;

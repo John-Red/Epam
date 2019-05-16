@@ -1,4 +1,4 @@
-package com.epam.javacore2019.steve2.dbservice.misc;
+package company.dbservice.misc;
 
 import java.io.File;
 

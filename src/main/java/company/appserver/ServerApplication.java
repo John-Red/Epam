@@ -1,6 +1,5 @@
-package com.epam.javacore2019.steve2.appserver;
+package company.appserver;
 
-import com.epam.javacore2019.steve2.webservice.*;
 import com.sun.net.httpserver.HttpServer;
 
 import java.net.InetSocketAddress;

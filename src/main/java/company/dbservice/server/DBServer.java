@@ -1,6 +1,6 @@
-package com.epam.javacore2019.steve2.dbservice.server;
+package company.dbservice.server;
 
-import com.epam.javacore2019.steve2.dbservice.DBApplication;
+import company.dbservice.DBApplication;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;

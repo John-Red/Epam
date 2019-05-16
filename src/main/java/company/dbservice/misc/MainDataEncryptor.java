@@ -1,7 +1,6 @@
-package com.epam.javacore2019.steve2.dbservice.misc;
+package company.dbservice.misc;
 
-import com.epam.javacore2019.steve2.MainApplication;
-import com.epam.javacore2019.steve2.dbservice.DBApplication;
+import company.dbservice.DBApplication;
 
 public class MainDataEncryptor implements DataEncryptor {
     @Override

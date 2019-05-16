@@ -1,6 +1,6 @@
-package com.epam.javacore2019.steve2.dbservice.dbstate;
+package company.dbservice.dbstate;
 
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryResult;
+import company.dbservice.data.query.QueryResult;
 
 public abstract class DBState {
 

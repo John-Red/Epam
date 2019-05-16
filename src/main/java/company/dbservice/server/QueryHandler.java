@@ -1,9 +1,9 @@
-package com.epam.javacore2019.steve2.dbservice.server;
+package company.dbservice.server;
 
-import com.epam.javacore2019.steve2.dbservice.DBApplication;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryResult;
-import com.epam.javacore2019.steve2.dbservice.misc.DataHandler;
-import com.epam.javacore2019.steve2.dbservice.misc.Utils;
+import company.dbservice.DBApplication;
+import company.dbservice.data.query.QueryResult;
+import company.dbservice.misc.DataHandler;
+import company.dbservice.misc.Utils;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -26,7 +26,7 @@ public class QueryHandler implements HttpHandler {
         QueryResult result = DBApplication.INSTANCE.query(dbQueryRequest.getQueryString());
         String response = "";
         if (result.getStatus().equals(QueryResult.Status.OK)) {
-            response = (String)(result.getLoad());
+            response = (String) (result.getLoad());
         } else {
             response = result.getStatus() + "\n" + result.getMessage();
         }

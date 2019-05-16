@@ -1,4 +1,4 @@
-package com.epam.javacore2019.steve2.dbservice.data;
+package company.dbservice.data;
 
 import java.util.ArrayList;
 import java.util.Arrays;

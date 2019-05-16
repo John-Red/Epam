@@ -1,5 +1,4 @@
-package com.epam.javacore2019.steve2.webservice;
-
+package company.webservice;
 import com.sun.net.httpserver.HttpServer;
 
 import java.net.InetSocketAddress;
@@ -17,7 +16,7 @@ public enum WebClientApplication {
         server.createContext("/js/", new JsHandler());
         server.createContext("/api/testget", new ApiGetTestHandler());
         server.createContext("/api/testpost", new ApiPostTestHandler());
-        server.createContext("/api/criminals", new ApiPostTestHandler());
+        server.createContext("/api/criminals", new ApiCriminalsHandler());
         server.start();
         String message = String.format("%s is running on port: %d", APP_NAME, server.getAddress().getPort());
         System.out.println(message);

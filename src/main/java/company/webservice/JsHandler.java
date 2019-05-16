@@ -1,5 +1,4 @@
-package com.epam.javacore2019.steve2.webservice;
-
+package company.webservice;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 

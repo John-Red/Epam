@@ -1,9 +1,9 @@
-package com.epam.javacore2019.steve2.dbservice.dbstate;
+package company.dbservice.dbstate;
 
-import com.epam.javacore2019.steve2.dbservice.DBApplication;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryProcessor;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryProcessorRegister;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryResult;
+import company.dbservice.DBApplication;
+import company.dbservice.data.query.QueryProcessor;
+import company.dbservice.data.query.QueryProcessorRegister;
+import company.dbservice.data.query.QueryResult;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package com.epam.javacore2019.steve2.dbservice.misc;
+package company.dbservice.misc;
 
 public interface DBConstants {
     String DB_DIR = "database";

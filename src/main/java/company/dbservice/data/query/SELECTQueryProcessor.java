@@ -1,9 +1,9 @@
-package com.epam.javacore2019.steve2.dbservice.data.query;
+package company.dbservice.data.query;
 
-import com.epam.javacore2019.steve2.dbservice.DBApplication;
-import com.epam.javacore2019.steve2.dbservice.data.Table;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryProcessor;
-import com.epam.javacore2019.steve2.dbservice.data.query.QueryResult;
+import company.dbservice.DBApplication;
+import company.dbservice.data.Table;
+import company.dbservice.data.query.QueryProcessor;
+import company.dbservice.data.query.QueryResult;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -16,6 +16,8 @@ public class SELECTQueryProcessor implements QueryProcessor {
     public static final String SPACE = "([\\s]+)";
     public static final String FROM_GROUP = "(FROM)";
     public static final String TBL_GROUP = "([a-zA-Z]+)$";
+    public static final String WHERE_GROUP = "(WHERE)";
+    public static final String ID_GROUP = "(id=)+[0-9]";
 
     @Override
     public QueryResult process(String query) {
@@ -47,9 +49,10 @@ public class SELECTQueryProcessor implements QueryProcessor {
         String result = "";
         for (List<String> list : collectedResult ) {
             for (String s : list) {
-                result += s + ";";
+                result += s + ",";
             }
-            result += "\n";
+            result = result.substring(0,result.length()-1);
+            result += ";";
         }
         return result;
     }

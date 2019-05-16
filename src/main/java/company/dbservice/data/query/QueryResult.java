@@ -1,4 +1,4 @@
-package com.epam.javacore2019.steve2.dbservice.data.query;
+package company.dbservice.data.query;
 
 public class QueryResult {
     Status status;
