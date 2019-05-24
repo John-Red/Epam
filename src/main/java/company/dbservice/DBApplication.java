@@ -6,7 +6,9 @@ import company.dbservice.dbstate.DBState;
 import company.dbservice.dbstate.DBStateInit;
 import company.dbservice.dbstate.DBStateRunning;
 import company.dbservice.dbstate.DBStateStop;
+import company.dbservice.test.Test;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +24,17 @@ public enum DBApplication {
     public DBState stateStop = new DBStateStop("Shutting Down");
 
     public void start() {
-        changeState(stateInit);
+        boolean testEnabled = Boolean.valueOf(System.getProperty("et"));
+        if (testEnabled){
+
+            try {
+                runTests("company.dbservice.test.WHERETest");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        //changeState(stateInit);
     }
 
     public void stop() {
@@ -55,6 +67,23 @@ public enum DBApplication {
 
     public Table getTable(String tableName) {
         return tables.get(tableName);
+    }
+
+    private void runTests (String className) throws Exception{
+        int passed = 0, failed = 0;
+        for (Method m: Class.forName(className).getMethods()){
+            Test testAnnotation = m.getAnnotation(Test.class);
+            if (testAnnotation !=null && testAnnotation.enabled()){
+                try{
+                    m.invoke(null);
+                    passed++;
+                }catch (Throwable ex){
+                    System.out.printf("Test %s failed: %s \n", m, ex.getCause());
+                    failed++;
+                }
+            }
+        }
+        System.out.printf("Passed: %d Failed: %d",passed, failed);
     }
 
 }
