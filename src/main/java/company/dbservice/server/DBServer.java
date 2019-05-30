@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public enum DBServer {
     INSTANCE;
-    public static final int PORT = 6701;
+    public static int PORT;
     public static final String SERVER_NAME = "Steve DB Server";
     public void start() throws Exception {
         HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 10 );

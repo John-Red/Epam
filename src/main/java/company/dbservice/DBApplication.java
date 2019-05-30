@@ -6,7 +6,8 @@ import company.dbservice.dbstate.DBState;
 import company.dbservice.dbstate.DBStateInit;
 import company.dbservice.dbstate.DBStateRunning;
 import company.dbservice.dbstate.DBStateStop;
-import company.dbservice.test.Test;
+import company.dbservice.server.DBServer;
+import company.dbservice.test.*;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -23,20 +24,20 @@ public enum DBApplication {
     public DBState stateRun = new DBStateRunning("Running");
     public DBState stateStop = new DBStateStop("Shutting Down");
 
-    public void start() {
+    public void start(int port) {
+        DBServer.PORT = port;
         boolean testEnabled = Boolean.valueOf(System.getProperty("et"));
-        if (testEnabled){
-
+        if (testEnabled) {
             try {
                 runTests("company.dbservice.test.WHERETest");
-            } catch (Exception e) {
+            }catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
-        //changeState(stateInit);
+        changeState(stateInit);
     }
 
+    @Deprecated
     public void stop() {
         currentState.onStop();
     }
@@ -69,21 +70,21 @@ public enum DBApplication {
         return tables.get(tableName);
     }
 
-    private void runTests (String className) throws Exception{
+    private void runTests(String className) throws Exception {
         int passed = 0, failed = 0;
-        for (Method m: Class.forName(className).getMethods()){
+        for (Method m : Class.forName(className).getMethods()) {
             Test testAnnotation = m.getAnnotation(Test.class);
-            if (testAnnotation !=null && testAnnotation.enabled()){
-                try{
+            if (testAnnotation != null && testAnnotation.enabled()) {
+                try {
                     m.invoke(null);
+                    System.out.printf("\nTest %s PASSED ", m.getName());
                     passed++;
-                }catch (Throwable ex){
-                    System.out.printf("Test %s failed: %s \n", m, ex.getCause());
+                } catch (Throwable ex) {
+                    System.out.printf("\nTest %s FAILED: %s ", m.getName(), ex.getCause());
                     failed++;
                 }
             }
         }
-        System.out.printf("Passed: %d Failed: %d",passed, failed);
+        System.out.printf("Passed: %d, Failed %d%n", passed, failed);
     }
-
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<applications>
+    <application
+        name="DATABASE"
+        class="company.dbservice.DBApplication"
+        port="6701"
+    />
+    <application
+        name="WEBCLIENT"
+        class="company.webservice.WebClientApplication"
+        port="6703"
+    />
+    <application
+        name="APPSERVER"
+        class="company.appserver.ServerApplication"
+        port="6702"
+    />
+</applications>

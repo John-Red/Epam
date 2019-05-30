@@ -1,5 +1,6 @@
 package company.appserver;
 
+import company.webservice.*;
 import com.sun.net.httpserver.HttpServer;
 
 import java.net.InetSocketAddress;
@@ -7,11 +8,12 @@ import java.net.InetSocketAddress;
 public enum ServerApplication  {
     INSTANCE;
 
-    public static final int PORT = 6702;
+    public static int PORT;
     public static final String APP_NAME = "Application Service";
 
-    public void start() throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 10 );
+    public void start(int port) throws Exception {
+        HttpServer server = HttpServer.create(new InetSocketAddress(port), 10 );
+        PORT = port;
         server.createContext("/api/criminals", new CriminalsApiHandler()); //criminals/{id}
         server.start();
         String message = String.format("%s is running on port: %d", APP_NAME, server.getAddress().getPort());

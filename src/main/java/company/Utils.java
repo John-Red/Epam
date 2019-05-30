@@ -1,4 +1,4 @@
-package company.webservice;
+package company;
 
 import company.dbservice.misc.XMLDocumentHandler;
 import org.w3c.dom.Document;

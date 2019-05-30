@@ -1,0 +1,8 @@
+<webclient>
+    <handlers>
+        <handler path="/pages/" class="company.webservice.HtmlHandler"></handler>
+        <handler path="/css/" class="company.webservice.CssHandler"></handler>
+        <handler path="/js/" class="company.webservice.JsHandler"></handler>
+        <handler path="/api/criminals" class="company.webservice.ApiCriminalsHandler"></handler>
+    </handlers>
+</webclient>

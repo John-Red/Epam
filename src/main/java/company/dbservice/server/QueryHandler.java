@@ -23,17 +23,19 @@ public class QueryHandler implements HttpHandler {
                 dbQueryRequest.setQueryString(line);
             }
         });
+
         QueryResult result = DBApplication.INSTANCE.query(dbQueryRequest.getQueryString());
+
         String response = "";
         if (result.getStatus().equals(QueryResult.Status.OK)) {
-            response = (String) (result.getLoad());
+            response = (String)(result.getLoad());
         } else {
             response = result.getStatus() + "\n" + result.getMessage();
         }
         request.sendResponseHeaders(200, response.length());
         OutputStream os = request.getResponseBody();
         os.write(response.getBytes());
-        os.close();
+        request.close();
     }
 
     public static class DBQueryRequest {

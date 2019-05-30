@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class DBStateRunning extends DBState {
 
-    public static final String QUERY_REGEX = "^(SELECT|UPDATE|INSERT|DELETE)([a-zA-Z, ]+)$";
+    public static final String QUERY_REGEX = "^(SELECT|UPDATE|INSERT|DELETE)([a-zA-Z0-9,><= ]+)$";
 
     public DBStateRunning(String name) {
         super(name);
@@ -31,11 +31,12 @@ public class DBStateRunning extends DBState {
     public QueryResult onQuery(String query) {
         Pattern pattern = Pattern.compile(QUERY_REGEX);
         Matcher matcher = pattern.matcher(query);
+        QueryResult result = null;
         if (matcher.find()) {
             String queryType = matcher.group(1);
             QueryProcessor processor = QueryProcessorRegister.getQueryProcessor(queryType);
             if (processor != null) {
-                QueryResult result = processor.process(query);
+                result = processor.process(query);
                 if (result.getStatus().equals(QueryResult.Status.OK)) {
                     System.out.println("\nQUERY: " + query);
                     System.out.println("\nSTATUS: " + result.getStatus());
@@ -45,6 +46,6 @@ public class DBStateRunning extends DBState {
                 }
             }
         }
-        return null;
+        return result;
     }
 }
