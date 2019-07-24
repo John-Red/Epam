@@ -1,5 +1,7 @@
 package company.dbservice.data.query;
 
+import company.dbservice.data.query.operator.BooleanOperator;
+
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

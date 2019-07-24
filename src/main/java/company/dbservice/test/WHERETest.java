@@ -3,6 +3,10 @@ package company.dbservice.test;
 import company.dbservice.data.TableColumn;
 import company.dbservice.data.TableRow;
 import company.dbservice.data.query.*;
+import company.dbservice.data.query.operator.BooleanOperator;
+import company.dbservice.data.query.operator.OperatorAND;
+import company.dbservice.data.query.operator.OperatorEQ;
+import company.dbservice.data.query.operator.OperatorOR;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +29,7 @@ public class WHERETest {
             new TableColumn("lastName"),
             new TableColumn("nickname"),
             new TableColumn("numberOfCrimes")
+            //Class.forName("").getDeclaredMethods();
     };
 
     public static final TableRow[] rows = new TableRow[]{

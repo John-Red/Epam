@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <connections>
+        <connection
+            name="SteveDB"
+            url="http://localhost:6701/api/query"
+            username="admin"
+            password="qwerty"
+        />
+    </connections>
+    <handlers>
+        <handler
+            name="Criminals"
+            path="/api/criminals"
+            class="company.appserver.CriminalsApiHandler"
+        />
+    </handlers>
+</configuration>

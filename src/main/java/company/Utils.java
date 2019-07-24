@@ -1,4 +1,4 @@
-package company;
+package com.epam.javacore2019.steve2;
 
 import company.dbservice.misc.XMLDocumentHandler;
 import org.w3c.dom.Document;

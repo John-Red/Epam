@@ -1,4 +1,4 @@
-package company;
+package company.steve2;
 
 import company.dbservice.misc.XMLDocumentHandler;
 import org.w3c.dom.Document;
@@ -16,20 +16,16 @@ public class Application {
     public static Map<String, Enum> applications = new HashMap<>();
 
     public static void main(String[] args) {
-
         try {
             startApplications();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
 
     public static void startApplications() {
         try {
-            Utils.readXMLDocument("main/config.xml", new XMLDocumentHandler() {
+            com.epam.javacore2019.steve2.Utils.readXMLDocument("main/config.xml", new XMLDocumentHandler() {
                 @Override
                 public void handleDocument(Document document) {
                     try {

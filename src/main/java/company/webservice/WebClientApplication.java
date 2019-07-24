@@ -21,8 +21,10 @@ public enum WebClientApplication {
     public static int PORT;
     public static final String APP_NAME = "Web Client Service";
     private HttpServer server;
+    private Map<String, HttpHandler> handlers;
 
     public void start(int port) throws Exception {
+        handlers = new HashMap<>();
         server = HttpServer.create(new InetSocketAddress(port), 10 );
         PORT = port;
         initHandlers();
@@ -31,8 +33,17 @@ public enum WebClientApplication {
         System.out.println(message);
     }
 
+    private HttpHandler getHandlerByClassName(String className) {
+        for (HttpHandler handler : handlers.values()) {
+            if (handler.getClass().getName().equals(className)) {
+                return handler;
+            }
+        }
+        return null;
+    }
+
     public void initHandlers() {
-        final Map<String, String> handlerMap = new HashMap<>();
+        handlers = new HashMap<>();
         try {
             Utils.readXMLDocument("webclient/web.xml", new XMLDocumentHandler() {
                 @Override
@@ -41,8 +52,16 @@ public enum WebClientApplication {
                         NodeList list = document.getElementsByTagName("handler");
                         for (int i =0 , len = list.getLength(); i < len; i++) {
                             Element el = (Element)(list.item(i));
-                            handlerMap.put(el.getAttribute("path"), el.getAttribute("class"));
+                            String path = el.getAttribute("path");
+                            String className =  el.getAttribute("class");
+                            HttpHandler handler = getHandlerByClassName(className);
+                            if (handler == null) {
+                                handler = (HttpHandler)(Class.forName(className).newInstance());
+                                handlers.put(path, handler);
+                            }
+                            server.createContext(path, handler);
                         }
+                        System.out.printf("\nHANDLERS NUMBER: %d", handlers.size());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -54,17 +73,6 @@ public enum WebClientApplication {
             e.printStackTrace();
         } catch (SAXException e) {
             e.printStackTrace();
-        }
-        try {
-            for (Map.Entry<String, String> entry : handlerMap.entrySet()) {
-                server.createContext(entry.getKey(), (HttpHandler)(Class.forName(entry.getValue()).newInstance()));
-            }
-        } catch (ClassNotFoundException e1) {
-            e1.printStackTrace();
-        } catch (InstantiationException e2) {
-            e2.printStackTrace();
-        } catch (IllegalAccessException e3) {
-            e3.printStackTrace();
         }
     }
 }
